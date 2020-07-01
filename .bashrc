@@ -2,6 +2,8 @@
 # ~/.bashrc
 #
 
+PATH=$PATH:/usr/local/bin
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 

@@ -82,7 +82,7 @@ keys = [
         )),
 
     Key([], "XF86AudioLowerVolume", lazy.spawn(
-            "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+            "pactl set-sink-volume @DEFAULT_SINK@ -10%"
         )),
 
     Key([], "XF86AudioMute", lazy.spawn(
@@ -112,20 +112,29 @@ group_names = 'NET TERM DOC SHIT'.split()
 
 groups = [Group(name, layout='max') for name in group_names]
 
+# Default theme setting for layouts
+
+layouts_theme = {
+		"border_width": 2,
+                "margin": 6,
+                "border_focus": "e1acff",
+                "border_normal": "1D2330"
+		}
+
 layouts = [
-    layout.Max(),
-    layout.Stack(num_stacks=2),
+    layout.Max(**layouts_theme),
+    # layout.Stack(num_stacks=2),
     # Try more layouts by unleashing below layouts.
-    # layout.Bsp(),
-    # layout.Columns(),
-    # layout.Matrix(),
-    # layout.MonadTall(),
-    # layout.MonadWide(),
-    # layout.RatioTile(),
-    # layout.Tile(),
+    # layout.Bsp(**layouts_theme),
+    # layout.Columns(**layouts_theme),
+    # layout.Matrix(**layouts_theme),
+    layout.MonadTall(**layouts_theme),
+    # layout.MonadWide(**layouts_theme),
+    # layout.RatioTile(**layouts_theme),
+    # layout.Tile(**layouts_theme),
     # layout.TreeTab(),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
+    # layout.VerticalTile(**layouts_theme),
+    layout.Zoomy(**layouts_theme),
 ]
 
 widget_defaults = dict(
@@ -143,7 +152,7 @@ screens = [
                 widget.GroupBox(),
                 widget.Prompt(),
                 widget.WindowName(),  
-                widget.TextBox("Maiky me lo chupa", name="default"),
+                widget.TextBox("NO TOY", name="default"),
                 widget.Battery(
                     format = "{char}{percent: 2.0%}",
                     charge_char = "↯",

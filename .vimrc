@@ -1,5 +1,6 @@
 set ruler
 set wildmenu
+set nowrap
 
 syntax enable
 set colorcolumn=120
