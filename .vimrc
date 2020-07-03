@@ -1,11 +1,21 @@
+syntax on
+
+set noerrorbells
+set tabstop=2 softtabstop=2
+set shiftwidth=2
 set ruler
-set wildmenu
+set expandtab
+set smartindent
+set nu relativenumber
 set nowrap
+set smartcase
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set incsearch
 
-syntax enable
-set colorcolumn=120
-set t_Co=256
-
-set number relativenumber
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgray
 
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!

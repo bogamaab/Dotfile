@@ -26,9 +26,23 @@
 
 from libqtile.config import Key, Screen, Group, Drag, Click
 from libqtile.lazy import lazy
-from libqtile import layout, bar, widget
+from libqtile import layout, bar, widget, hook
 
 from typing import List  # noqa: F401
+
+import os
+import subprocess
+
+qtile_path = os.path.join(os.path.expanduser("~"), ".config", "qtile")
+
+# AUTOSTART
+
+@hook.subscribe.startup
+def autostart():
+    script = os.path.join(qtile_path, "autostart.sh")
+    subprocess.call([script])
+
+# KEYS
 
 mod = "mod4"
 
@@ -117,7 +131,7 @@ groups = [Group(name, layout='max') for name in group_names]
 layouts_theme = {
 		"border_width": 2,
                 "margin": 6,
-                "border_focus": "e1acff",
+                "border_focus": "#1d2021",
                 "border_normal": "1D2330"
 		}
 
@@ -138,7 +152,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='Ubuntu Mono',
+    font='JetBrain Mono',
     fontsize=14,
     padding=2,
 )
@@ -162,6 +176,7 @@ screens = [
                 widget.Clock(format = '%a %Y-%m-%d %H:%M'),
             ],
             24,
+            opacity = 0.85
         ),
     ),
 ]
