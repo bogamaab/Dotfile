@@ -19,3 +19,16 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgray
 
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'morhetz/gruvbox'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'junegunn/fzf.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tpope/vim-endwise'
+
+call plug#end()
+
+colorscheme gruvbox
+set background=dark
