@@ -96,7 +96,7 @@ keys = [
         )),
 
     Key([], "XF86AudioLowerVolume", lazy.spawn(
-            "pactl set-sink-volume @DEFAULT_SINK@ -10%"
+            "pactl set-sink-volume @DEFAULT_SINK@ -5%"
         )),
 
     Key([], "XF86AudioMute", lazy.spawn(
@@ -131,7 +131,7 @@ groups = [Group(name, layout='max') for name in group_names]
 layouts_theme = {
 		"border_width": 2,
                 "margin": 6,
-                "border_focus": "#1d2021",
+                "border_focus": "#e1acff",
                 "border_normal": "1D2330"
 		}
 
@@ -152,8 +152,8 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='JetBrain Mono',
-    fontsize=14,
+    font='JetBrains Mono',
+    fontsize=13,
     padding=2,
 )
 extension_defaults = widget_defaults.copy()
@@ -169,8 +169,9 @@ screens = [
                 widget.TextBox("NO TOY", name="default"),
                 widget.Battery(
                     format = "{char}{percent: 2.0%}",
-                    charge_char = "↯",
+                    charge_char = "~~>",
                     discharge_char = "",
+                    update_interval = 30,
                     low_percentage = 0.2
                     ),
                 widget.Clock(format = '%a %Y-%m-%d %H:%M'),

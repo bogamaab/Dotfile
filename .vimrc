@@ -14,6 +14,7 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
+set list
 set listchars=eol:·
 
 set colorcolumn=80
