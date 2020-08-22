@@ -87,6 +87,11 @@ keys = [
 
     Key([mod], "b", lazy.spawn("firefox")),
 
+    # Menu
+
+    Key([mod], "m", lazy.spawn("rofi -show run")),
+    Key([mod, "shift"], "m", lazy.spawn("rofi -show")),
+
     # ------------ Hardware Configs ------------
 
     # Volume

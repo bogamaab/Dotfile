@@ -17,6 +17,8 @@ set undofile
 set incsearch
 set list
 set listchars=eol:·
+set showcmd
+set showmatch
 
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgray
@@ -31,6 +33,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-endwise'
+Plug 'digitaltoad/vim-jade'
+Plug 'ap/vim-css-color'
 
 call plug#end()
 
