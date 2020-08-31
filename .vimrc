@@ -25,6 +25,10 @@ highlight ColorColumn ctermbg=0 guibg=lightgray
 
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
+let mapleader = " "
+noremap <leader>f :Files<cr>
+noremap <leader>w :w<cr>
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
